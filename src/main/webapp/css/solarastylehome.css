@@ -1,0 +1,129 @@
+
+body {
+  padding: 25px;
+  background-color:#630c02;
+}
+
+#content{
+
+}
+
+.Container {
+	height: 62%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	color: black;
+	overflow: auto;
+	text-align: center;
+	
+}
+
+
+#banner {
+	height: 28%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color:#0099FF;   /*#781206;*/
+	color: black;
+	overflow: auto;
+	text-align: left;
+	
+}
+
+#footer {
+	height: 9%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color:#781206;
+	color: black;
+	overflow: auto;
+	text-align: center;
+	border-top:3px #fdb930 solid;	
+}
+
+
+#footer_inner{    			
+	border-top:3px #f47b20 solid;	
+	padding:15px ;
+}
+
+
+#copyright span,#copyright span a{
+    letter-spacing:1px;
+    font:"Times New Roman", Times, serif;
+	font-size:15px;
+    color:white;
+    text-decoration:none;
+}
+
+
+#header{    
+    padding-left:3em;  
+   
+}
+
+#logo{        
+    padding-right:0em;
+    padding-top:2em;
+	position:absolute;
+	left:82px;
+	top:18px;
+	_left:57px;
+	_top:-10px;
+}
+
+
+#menu{        
+    padding:0em;
+	position:absolute;
+	right:33px;
+	top:33px;
+	_right:0px;
+	_top:0px;
+}
+
+
+#aboutus{
+	position:absolute;	
+	left:92px;
+	top:168px;
+	_left:67px;
+	_top:143px;
+	width:21em;
+	_width:19em;
+	
+	text-align:left;
+}
+
+#news{
+	position:absolute;	
+	left:472px;
+	top:168px;
+	_left:447px;
+	_top:143px;
+	width:21em;
+	_width:19em;
+	
+	text-align:left;
+}
+
+#news p, #aboutus p{
+	font-size:0.9em;
+	color:#630c02; 
+	letter-spacing:1px;
+
+}
+
+#news h2, #aboutus h2 {
+  font-size:1.2em;color:#f47b20;letter-spacing:2px
+}
+
+#news h3 {
+  font-size:1.2em;color:#FDBB30;letter-spacing:2px
+}
+
+

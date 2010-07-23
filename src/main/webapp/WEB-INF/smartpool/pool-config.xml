@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- This is a sample config file illustrating most of the common usages -->
+
+<!-- The pool-config.xsd is expected to be in the same directory as the xml file, edit to absolute location if required -->
+
+<pool-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pool-config.xsd">
+
+    <!-- A Pool named Pool_One -->
+    <pool>
+
+        <!-- Basic pool configuration -->
+        <basic>
+
+            <!-- Name of the pool, should be a unique name -->
+            <pool-name>SolaraPool</pool-name>
+
+            <!-- This pool is the default pool, indicating you dont need to specify the name of the pool when fetching a connection -->
+            <default-pool>true</default-pool>
+
+            <!-- Name of the driver, should be in classpath -->
+            <connection-driver>com.mysql.jdbc.Driver</connection-driver>
+
+            <!-- database username -->
+            <username>artsansa_sola</username>
+
+            <!-- database password -->
+            <password>artsansa_sola</password>
+
+            <!-- SmartPool will automatically close the objects like Statment, PreparedStatement, CallableStatement when
+            connection is returned to pool, default is false -->
+            <auto-close>true</auto-close>
+
+            <!-- Users will be allowed to obtain a connection from this pool without specifying an owner, default is false -->
+            <allow-anonymous-connections>true</allow-anonymous-connections>
+
+            <!-- Run this query to validate a connection before the connection is handed over to the user -->
+            <validator-query>select count(*) from pnrstatus</validator-query>
+
+        </basic>
+        <!--End of Basic pool configuration -->
+
+
+        <!-- Specify connect string, this section is to support multiple subpools whitin a single pool, thus allowing load balacing withing a pool.
+        This feature is particularly usefull in a clustered database environment like Oracle RAC where multiple instances can be used to
+        access the same database. The pool will contain Subpools each pooling connections from the connect-string specified -->
+        <connect-strings>
+            <!-- The thread will be associated with a sub pool, so that all connections drawn from the same thread will be served
+            by the same instance, this is to avoid the problems of distributed transactions spawning across differnt databases in a cluster.
+            -->
+            <thread-stickiness>true</thread-stickiness>
+            <!-- Connect string for the subpool -->
+            <connect-string name="conn1">jdbc:mysql://localhost:3306/artsansa_solara</connect-string>
+            <!--connect-string name="conn1">jdbc:mysql://localhost:3307/artsansar</connect-string-->
+        </connect-strings>
+
+
+        <!-- Pool Sizing parameters -->
+        <pool-sizing>
+            <!-- Minimum connections in the pool -->
+            <min-connections>2</min-connections>
+
+            <!-- Maximum connections in the pool -->
+            <max-connections>10</max-connections>
+
+            <!-- Increment number when no more free connections are available -->
+            <increment-by>1</increment-by>
+
+            <!-- Maximum no of free connections to be available for the pool to shrink -->
+            <max-free-connections-for-release>2</max-free-connections-for-release>
+
+            <!-- Allowed wait time before an exception is thrown to the user while waiting
+            for a free connections is available -->
+            <connection-wait-time-out>100</connection-wait-time-out>
+
+            <!-- Maximum allowed idle time, after which a connection is recovered forcefully -->
+            <max-connection-idle-time>1000</max-connection-idle-time>
+
+        </pool-sizing>
+        <!-- End of Pool Sizing parameters -->
+
+
+        <!-- Leak Detection section -->
+        <leak-detection>
+
+            <!-- Turn Leak detection on/off -->
+            <detect-leaks>true</detect-leaks>
+
+            <!-- Allowed time for a user to hold a connection after which it is categorised as a leak -->
+            <leak-time-out>100</leak-time-out>
+
+            <!-- The poll interval of the thread that does the leak detection -->
+            <poll-thread-time>1000</poll-thread-time>
+
+            <!-- The listener that listens to leak events -->
+            <default-listener>org.smartlib.impl.LeakDetectorImpl</default-listener>
+
+        </leak-detection>
+        <!-- Leak Detection section -->
+
+    </pool>
+
+
+
+</pool-config>
+

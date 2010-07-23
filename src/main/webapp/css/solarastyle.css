@@ -1,0 +1,126 @@
+
+body {
+  margin:0;
+  padding:0;
+  background-color:#6F1100;
+  color:white;
+  background-image:url("../images/fileshareBK.jpg");
+  background-repeat:no-repeat ;
+  background-position:right top;
+  height:100%;
+  width:100%
+}
+
+#header{
+    height:6em;
+    padding-left:5em;
+    padding-right:5em;
+    padding-top:1em;
+}
+
+#header div a {
+    color:white;
+    text-decoration:none;
+    letter-spacing:2px;
+    padding:0em .2em 0em .2em;
+}
+
+#login{
+	margin-top:4em;
+	width:20em;
+}
+
+#user_info{
+	margin-top:4em;
+	width:30em;
+}
+
+#user_info p{
+	font-size:0.9em;
+	color:white; 
+	letter-spacing:2px;
+
+}
+
+#user_info h2 , #file_list h2 {
+  font-size:1.8em;color:#FDBB30;letter-spacing:2px
+}
+
+#file_list h3 {
+  font-size:1.2em;color:#FDBB30;letter-spacing:2px
+}
+
+#login table tr{
+	height:3em;
+}
+
+#login table tr td{
+	font-size:0.9em;
+	color:white; 
+	letter-spacing:2px;
+}
+
+
+#input_text {
+	background:#A7331D;
+	outline-color:#F47B20;
+    color:white;
+}
+
+
+#input_button {
+	background-color:#F47B20
+}
+
+#input_select {
+	background-color:#F47B20;
+}
+
+
+
+#home_back{
+		
+}
+
+
+#file_list{
+    
+    padding-left:2em;
+	width:40em;
+    text-align:left;
+}
+
+#file_list table tr td a, #file_list table tr td{
+
+    font-size:0.9em;
+	color:white;
+	letter-spacing:2px;
+    margin-right:2em;
+    margin-left:.5em;
+
+}
+
+
+#file_upload{    
+    width:16em;
+    text-align:right;
+}
+
+#file_upload a {
+    color: white;
+    text-decoration:none;
+}
+
+#footer{
+    border-top:.2em solid #F47B20;
+    height:4em;
+    padding:1em ;
+    	
+}
+
+#copyright span,#copyright span a{
+    letter-spacing:2px;
+    font-weight:bold;
+    color:white;
+    text-decoration:none;
+}

@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<xsd:schema
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        >
+    
+    <xsd:element name="pool-config">
+        <xsd:complexType>
+            <xsd:sequence minOccurs="1">
+                <xsd:element name="pool" type="pool"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="pool">
+        <xsd:sequence>
+            <xsd:element name="basic" type="basic" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="connect-strings" type="connect-strings" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="external-pooling" type="external-pooling" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="pool-sizing" type="pool-sizing" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="leak-detection" type="leak-detection" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="basic">
+        <xsd:sequence>
+            <xsd:element name="pool-name" type="pool-name" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="default-pool" type="default-pool" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="connection-driver" type="connection-driver" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="username" type="username" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="password" type="password" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="auto-close" type="auto-close" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="allow-anonymous-connections" type="allow-anonymous-connections" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="validator-query" type="validator-query" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="pool-sizing">
+        <xsd:sequence>
+            <xsd:element name="min-connections" type="min-connections" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="max-connections" type="max-connections" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="increment-by" type="increment-by" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="max-free-connections-for-release" type="max-free-connections-for-release" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="connection-wait-time-out" type="connection-wait-time-out" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="max-connection-idle-time" type="max-connection-idle-time" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="connect-strings">
+        <xsd:sequence>
+            <xsd:element name="thread-stickiness" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="connect-string" type="connect-string" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="external-pooling">
+        <xsd:sequence>
+            <xsd:element name="thread-stickiness" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="connection-loader-class" type="connection-loader-class" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="leak-detection">
+        <xsd:sequence>
+            <xsd:element name="detect-leaks" type="detect-leaks" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="leak-time-out" type="leak-time-out" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="poll-thread-time" type="poll-thread-time" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="default-listener" type="default-listener" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="pool-name" >
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength  value="0"/>
+            <xsd:maxLength  value="255"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="connection-driver" >
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="min-connections" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="max-connections" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="increment-by" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="username" >
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="password" >
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="validator-query" >
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+
+    <xsd:simpleType name="connect-string" >
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="connection-loader-class" >
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="default-pool" >
+        <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="detect-leaks" >
+        <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="leak-time-out" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="poll-thread-time" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="auto-close" >
+        <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="allow-anonymous-connections" >
+        <xsd:restriction base="xsd:boolean"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="max-free-connections-for-release" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="connection-wait-time-out" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="max-connection-idle-time" >
+        <xsd:restriction base="xsd:long">
+            <xsd:minInclusive  value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="default-listener" >
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+
+</xsd:schema>
+

@@ -1,0 +1,42 @@
+body {
+  margin:0;
+  padding:0;
+  background-color:#6F1100;
+  color:white;    
+}
+
+
+#admin_input{
+
+}
+
+#admin_input table tr td{
+	font-size:0.9em;
+	color:white;
+	letter-spacing:2px;
+}
+
+
+#input_text {
+	background:#A7331D;
+	outline-color:#F47B20;
+    color:white;
+}
+
+
+#input_button {
+	background-color:#F47B20
+}
+
+#input_select {
+	background-color:#F47B20;
+}
+
+
+#admin_input h2{
+  font-size:1.8em;color:#FDBB30;letter-spacing:2px
+}
+
+#admin_input h3{
+  font-size:1.2em;color:#FDBB30;letter-spacing:2px
+}
