@@ -19,7 +19,7 @@
         </servlet>
     <servlet>
         <servlet-name>UserAction</servlet-name>
-        <servlet-class>com.solara.filesharing.action.UserAction</servlet-class>
+        <servlet-class>com.experttag.util.filesharing.action.UserAction</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>action</servlet-name>
@@ -28,7 +28,7 @@
 
     <servlet>
         <servlet-name>Download</servlet-name>
-        <servlet-class>com.solara.filesharing.action.Download</servlet-class>
+        <servlet-class>com.experttag.util.filesharing.action.Download</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Download</servlet-name>

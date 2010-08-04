@@ -7,7 +7,7 @@
 
 <struts-config>
     <form-beans>
-        <form-bean name="UploadActionForm" type="com.solara.filesharing.UploadActionForm"/>
+        <form-bean name="UploadActionForm" type="com.experttag.util.filesharing.UploadActionForm"/>
     
     </form-beans>
     
@@ -27,10 +27,10 @@
     </global-forwards>
 
     <action-mappings>
-        <action parameter="method" path="/Setting" type="com.solara.filesharing.action.SettingAction"/>
-        <action parameter="method" path="/Login" type="com.solara.filesharing.action.LoginAction"/>
-        <action path="/Upload"  type="com.solara.filesharing.action.UploadAction"/>
-        <action path="/Delete"  type="com.solara.filesharing.action.DeleteAction"/>
+        <action parameter="method" path="/Setting" type="com.experttag.util.filesharing.action.SettingAction"/>
+        <action parameter="method" path="/Login" type="com.experttag.util.filesharing.action.LoginAction"/>
+        <action path="/Upload"  type="com.experttag.util.filesharing.action.UploadAction"/>
+        <action path="/Delete"  type="com.experttag.util.filesharing.action.DeleteAction"/>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

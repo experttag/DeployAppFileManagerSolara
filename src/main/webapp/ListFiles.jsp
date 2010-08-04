@@ -2,8 +2,8 @@
 <%@ page errorPage="Debug.jsp" %>
 <%@ page session="true" %>
 <%@ page contentType="text/html; charset=ISO-8859-1" %>
-<%@ page import="com.solara.utility.WebResourceHelper" %>
-<%@ page import="com.solara.filesharing.*" %>
+<%@ page import="com.experttag.util.utility.WebResourceHelper" %>
+<%@ page import="com.experttag.util.filesharing.*" %>
 <%@ page import="java.util.*" %>
 
 
